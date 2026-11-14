@@ -13,12 +13,12 @@ const copy = {
   ar: {
     nav: ['الرئيسية', 'المهارات', 'المشاريع', 'عني'],
     available: 'متاح لفرص جديدة',
-    eyebrow: 'مطور واجهات وتجارب رقمية',
+    eyebrow: 'مطور برمجيات ومصمم تجارب رقمية',
     heroA: 'أحوّل',
     heroB: 'الأفكار',
     heroC: 'إلى تجارب',
     heroD: 'تُحسّ وتُعاش.',
-    intro: 'أنا إبراهيم الخولي — مطور ومصمم شغوف ببناء منتجات رقمية تجمع بين الفكرة الذكية، التفاصيل الدقيقة، والحركة التي لها معنى.',
+    intro: 'أنا إبراهيم الخولي — مطور برمجيات أعمل على بناء منصات تعليمية وتجارب ويب تفاعلية، وأربط بين البرمجة والتصميم والإلكترونيات.',
     work: 'استكشف أعمالي',
     contact: 'خلينا نتكلم',
     scroll: 'انزل واكتشف',
@@ -28,17 +28,17 @@ const copy = {
     skillsLabel: 'ما الذي أقدمه',
     skillsTitle: 'أفكر في التجربة\nمن كل زاوية.',
     skills: [
-      ['01', 'تطوير الواجهات', 'واجهات سريعة، مرنة، ومتجاوبة باستخدام React وأحدث أدوات الويب.', 'React · Tailwind · JavaScript'],
-      ['02', 'الحركة والتفاعل', 'حركة مدروسة وتفاعلات دقيقة تجعل الواجهة حية دون تشتيت.', 'GSAP · Motion · Micro-interactions'],
-      ['03', 'التصميم الإبداعي', 'أنظمة بصرية جريئة، وتفاصيل متناسقة، وتجارب لها شخصية.', 'UI Design · Design Systems'],
-      ['04', 'الجودة والاختبار', 'أهتم بالتفاصيل وإمكانية الاستخدام واختبار التجربة على مختلف الشاشات.', 'Playwright · Accessibility']
+      ['01', 'تطوير الواجهات', 'تطوير تطبيقات ويب ومنصات تعليمية باستخدام PHP وJavaScript وقواعد البيانات.', 'PHP · MySQL · JavaScript'],
+      ['02', 'الحركة والتفاعل', 'بناء واجهات React حديثة وربطها بتجارب استخدام سلسة ومتجاوبة.', 'React · Tailwind · GSAP'],
+      ['03', 'التصميم الإبداعي', 'دمج المتحكمات والحساسات مع واجهات الويب لمتابعة البيانات والتحكم.', 'ESP32 · IoT · APIs'],
+      ['04', 'الجودة والاختبار', 'تصميم واجهات واضحة وسهلة الاستخدام مع اهتمام بالتفاصيل وإمكانية الوصول.', 'UI/UX · Responsive Design']
     ],
     projectsLabel: 'مختارات من العمل',
     projectsTitle: 'أفكار تحولت\nإلى واقع.',
     projects: [
-      ['01', 'EduGenius', 'منصة تعليمية تفاعلية', 'تعليم · لوحة تحكم · تجربة مستخدم', 'EG'],
-      ['02', 'Classroom Connect', 'نظام ذكي لمتابعة الفصول', 'IoT · Dashboard · Real-time', 'CC'],
-      ['03', 'Digital Playground', 'مساحة للتجارب والأفكار', 'Creative coding · Interaction', 'DP']
+      ['01', 'Edu-K', 'منصة تعليمية تفاعلية', 'PHP · Learning Platform · Dashboard', 'EK'],
+      ['02', 'Smart Classroom', 'نظام ذكي لمتابعة الفصول', 'ESP32 · IoT · PHP API', 'SC'],
+      ['03', 'Prime Skills', 'مكتبة المهارات والمراجع التقنية', 'Agent Skills · Developer Tools', 'PS']
     ],
     aboutLabel: 'وراء الشاشة',
     aboutTitle: 'فضولي يقودني.\nوالتفاصيل تهمني.',
@@ -70,17 +70,17 @@ const copy = {
     skillsLabel: 'What I bring',
     skillsTitle: 'I think about experience\nfrom every angle.',
     skills: [
-      ['01', 'Frontend development', 'Fast, flexible, responsive interfaces built with React and modern web tools.', 'React · Tailwind · JavaScript'],
-      ['02', 'Motion & interaction', 'Purposeful motion and thoughtful interactions that bring interfaces to life.', 'GSAP · Motion · Micro-interactions'],
-      ['03', 'Creative design', 'Bold visual systems, considered details, and experiences with a distinct voice.', 'UI Design · Design Systems'],
-      ['04', 'Quality & testing', 'Care for usability, accessibility, details, and testing across screen sizes.', 'Playwright · Accessibility']
+      ['01', 'Frontend development', 'Web applications and learning platforms built with PHP, JavaScript, and databases.', 'PHP · MySQL · JavaScript'],
+      ['02', 'Motion & interaction', 'Modern React interfaces with smooth, responsive user experiences.', 'React · Tailwind · GSAP'],
+      ['03', 'Creative design', 'Connecting microcontrollers and sensors to web interfaces for monitoring and control.', 'ESP32 · IoT · APIs'],
+      ['04', 'Quality & testing', 'Thoughtful, accessible interfaces with careful attention to usability and detail.', 'UI/UX · Responsive Design']
     ],
     projectsLabel: 'Selected explorations',
     projectsTitle: 'Ideas made\nreal.',
     projects: [
-      ['01', 'EduGenius', 'Interactive learning platform', 'Education · Dashboard · UX', 'EG'],
-      ['02', 'Classroom Connect', 'Smart classroom monitoring', 'IoT · Dashboard · Real-time', 'CC'],
-      ['03', 'Digital Playground', 'A space for experiments', 'Creative coding · Interaction', 'DP']
+      ['01', 'Edu-K', 'Interactive learning platform', 'PHP · Learning Platform · Dashboard', 'EK'],
+      ['02', 'Smart Classroom', 'Connected classroom monitoring', 'ESP32 · IoT · PHP API', 'SC'],
+      ['03', 'Prime Skills', 'A personal library of developer resources', 'Agent Skills · Developer Tools', 'PS']
     ],
     aboutLabel: 'Behind the screen',
     aboutTitle: 'Curiosity drives me.\nDetails matter.',
@@ -152,7 +152,7 @@ function App() {
           <button className="language-btn" onClick={() => setLang(lang === 'ar' ? 'en' : 'ar')} aria-label="Switch language">
             <Languages size={16} /> {lang === 'ar' ? 'EN' : 'عربي'}
           </button>
-          <a className="header-cta" href="mailto:hello@ibrahim.dev">{t.contact} <MoveUpRight size={15} /></a>
+          <a className="header-cta" href="https://github.com/ibrhimdd">{t.contact} <MoveUpRight size={15} /></a>
           <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">{menuOpen ? <X /> : <Menu />}</button>
         </div>
       </header>
@@ -228,11 +228,11 @@ function App() {
           <span className="project-count">SELECTED WORKS<br />2024 — 2026</span>
         </div>
         <div className="projects-list">
-          {t.projects.map((project, i) => <article className={'project-row reveal project-' + i} key={project[0]} onClick={() => {}}>
+          {t.projects.map((project, i) => <a className={'project-row reveal project-' + i} key={project[0]} href={i === 0 ? "https://github.com/ibrhimdd/edu-k" : i === 2 ? "https://github.com/ibrhimdd/ibrahim-skills-developer" : "https://github.com/ibrhimdd"} target="_blank" rel="noreferrer" aria-label={`Open ${project[1]} on GitHub`}>
             <div className="project-visual"><span className="project-monogram">{project[4]}</span><span className="project-orbit">✳</span><span className="project-number">{project[0]}</span></div>
             <div className="project-info"><span className="project-type">{project[3]}</span><h3>{project[1]}</h3><p>{project[2]}</p></div>
             <div className="project-link"><MoveUpRight size={22} /></div>
-          </article>)}
+          </a>)}
         </div>
         <p className="projects-footnote">* {rtl ? 'نماذج ومشاريع مختارة — سيتم إضافة روابط العرض والتفاصيل لاحقًا.' : 'Selected concepts and projects — live links and case studies coming soon.'}</p>
       </section>
@@ -250,14 +250,14 @@ function App() {
       <section id="contact" className="contact-section section-shell">
         <div className="contact-top reveal"><p className="section-label"><span>04</span> / {t.contactLabel}</p><span>LET’S MAKE<br />SOMETHING GOOD.</span></div>
         <h2 className="contact-title reveal">{t.contactTitle.split('\n').map((line, i) => <span key={i}>{line}</span>)}</h2>
-        <div className="contact-bottom reveal"><p>{t.contactText}</p><a className="contact-email" href="mailto:hello@ibrahim.dev">{t.email} <span><MoveUpRight /></span></a></div>
+        <div className="contact-bottom reveal"><p>{t.contactText}</p><a className="contact-email" href="https://github.com/ibrhimdd">{t.email} <span><MoveUpRight /></span></a></div>
         <div className="contact-decoration">✳</div>
       </section>
 
       <footer className="site-footer section-shell">
         <a className="wordmark" href="#home" onClick={(e) => { e.preventDefault(); goTo('home') }}><span className="wordmark-mark">I<span>.</span></span><span className="wordmark-name">IBRAHIM<span>ELKHOOLY</span></span></a>
         <p>© 2026 — {t.footer}</p>
-        <div className="social-links"><a href="https://github.com/ibrhimdd" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={18} /></a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={18} /></a><a href="mailto:hello@ibrahim.dev" aria-label="Email"><Mail size={18} /></a><button onClick={() => goTo('home')} aria-label={t.top}><ArrowUp size={18} /></button></div>
+        <div className="social-links"><a href="https://github.com/ibrhimdd" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={18} /></a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={18} /></a><a href="https://github.com/ibrhimdd" aria-label="Email"><Mail size={18} /></a><button onClick={() => goTo('home')} aria-label={t.top}><ArrowUp size={18} /></button></div>
       </footer>
     </main>
   )
