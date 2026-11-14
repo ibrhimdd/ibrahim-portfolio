@@ -6,13 +6,23 @@ import { ArrowDownToLine, ArrowLeft, ArrowRight, ArrowUpRight, Github, Linkedin,
 gsap.registerPlugin(ScrollTrigger)
 
 const skills = [
-  { name: 'PHP', sub: 'MySQL', Icon: Database, color: '#8bb7ff' },
+  { name: 'PHP', sub: 'Backend', Icon: Database, color: '#8bb7ff' },
+  { name: 'HTML', sub: 'Markup', Icon: Code2, color: '#ff8757' },
+  { name: 'Python', sub: 'Programming', Icon: Braces, color: '#f4d34e' },
+  { name: 'CSS', sub: 'Styling', Icon: Palette, color: '#5b9dff' },
+  { name: 'JavaScript', sub: 'Web', Icon: Braces, color: '#f4d34e' },
+  { name: 'Flutter', sub: 'Mobile', Icon: Atom, color: '#55d9ff' },
+  { name: 'C#', sub: '.NET', Icon: Code2, color: '#a78bfa' },
+  { name: 'C++', sub: 'Systems', Icon: Code2, color: '#7d9cff' },
+  { name: 'SQL', sub: 'Database', Icon: Database, color: '#4bc8d8' },
+  { name: 'TypeScript', sub: 'Typed JS', Icon: Braces, color: '#4f9cff' },
   { name: 'React', sub: 'Next.js', Icon: Atom, color: '#55d9ff' },
-  { name: 'JavaScript', sub: 'TypeScript', Icon: Braces, color: '#f4d34e' },
   { name: 'UI/UX', sub: 'Design', Icon: Palette, color: '#a78bfa' },
   { name: 'GSAP', sub: 'Motion', Icon: Zap, color: '#b5f34b' },
   { name: 'Three.js', sub: '3D', Icon: Box, color: '#d8d8ed' },
   { name: 'Tailwind', sub: 'CSS', Icon: Wind, color: '#39c8e8' },
+  { name: 'MySQL', sub: 'Data', Icon: Database, color: '#8bb7ff' },
+  { name: 'Next.js', sub: 'React Framework', Icon: Atom, color: '#eeeeff' },
   { name: 'More Skills', sub: '…', Icon: Layers3, color: '#6578ff' },
 ]
 
