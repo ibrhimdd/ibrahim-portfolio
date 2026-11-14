@@ -6,24 +6,32 @@ import { ArrowDownToLine, ArrowLeft, ArrowRight, ArrowUpRight, Github, Linkedin,
 gsap.registerPlugin(ScrollTrigger)
 
 const skills = [
-  { name: 'PHP', sub: 'Backend', Icon: Database, color: '#8bb7ff' },
-  { name: 'HTML', sub: 'Markup', Icon: Code2, color: '#ff8757' },
-  { name: 'Python', sub: 'Programming', Icon: Braces, color: '#f4d34e' },
-  { name: 'CSS', sub: 'Styling', Icon: Palette, color: '#5b9dff' },
-  { name: 'JavaScript', sub: 'Web', Icon: Braces, color: '#f4d34e' },
-  { name: 'Flutter', sub: 'Mobile', Icon: Atom, color: '#55d9ff' },
-  { name: 'C#', sub: '.NET', Icon: Code2, color: '#a78bfa' },
-  { name: 'C++', sub: 'Systems', Icon: Code2, color: '#7d9cff' },
-  { name: 'SQL', sub: 'Database', Icon: Database, color: '#4bc8d8' },
-  { name: 'TypeScript', sub: 'Typed JS', Icon: Braces, color: '#4f9cff' },
-  { name: 'React', sub: 'Next.js', Icon: Atom, color: '#55d9ff' },
-  { name: 'UI/UX', sub: 'Design', Icon: Palette, color: '#a78bfa' },
-  { name: 'GSAP', sub: 'Motion', Icon: Zap, color: '#b5f34b' },
-  { name: 'Three.js', sub: '3D', Icon: Box, color: '#d8d8ed' },
-  { name: 'Tailwind', sub: 'CSS', Icon: Wind, color: '#39c8e8' },
-  { name: 'MySQL', sub: 'Data', Icon: Database, color: '#8bb7ff' },
-  { name: 'Next.js', sub: 'React Framework', Icon: Atom, color: '#eeeeff' },
-  { name: 'More Skills', sub: '…', Icon: Layers3, color: '#6578ff' },
+  { name: 'PHP', sub: 'Backend', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg' },
+  { name: 'HTML', sub: 'Markup', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+  { name: 'Python', sub: 'Programming', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+  { name: 'CSS', sub: 'Styling', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+  { name: 'JavaScript', sub: 'Web', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+  { name: 'TypeScript', sub: 'Typed JS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+  { name: 'C#', sub: '.NET', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
+  { name: 'C++', sub: 'Systems', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
+  { name: 'SQL', sub: 'Database', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+  { name: 'Flutter', sub: 'Mobile', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg' },
+  { name: 'React', sub: 'Frontend', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+  { name: 'Next.js', sub: 'React Framework', logo: 'https://cdn.simpleicons.org/nextdotjs/FFFFFF' },
+  { name: 'MySQL', sub: 'Data', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+  { name: 'Tailwind CSS', sub: 'UI Styling', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
+  { name: 'Three.js', sub: '3D', logo: 'https://cdn.simpleicons.org/threedotjs/FFFFFF' },
+  { name: 'GSAP', sub: 'Motion', logo: 'https://cdn.simpleicons.org/greensock/88CE02' },
+  { name: 'UI/UX Design', sub: 'Design', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
+  { name: 'Microsoft Office', sub: 'Productivity', logo: 'https://cdn.simpleicons.org/microsoftoffice/D83B01' },
+  { name: 'Word', sub: 'Documents', logo: 'https://cdn.simpleicons.org/microsoftword/2B579A' },
+  { name: 'Excel', sub: 'Spreadsheets', logo: 'https://cdn.simpleicons.org/microsoftexcel/217346' },
+  { name: 'PowerPoint', sub: 'Presentations', logo: 'https://cdn.simpleicons.org/microsoftpowerpoint/B7472A' },
+  { name: 'Power BI', sub: 'Data Analytics', logo: 'https://cdn.simpleicons.org/powerbi/F2C811' },
+  { name: 'Arduino', sub: 'Electronics', logo: 'https://cdn.simpleicons.org/arduino/00979D' },
+  { name: 'Arduino IDE', sub: 'Embedded C/C++', logo: 'https://cdn.simpleicons.org/arduino/00979D' },
+  { name: 'ESP32', sub: 'IoT Projects', logo: 'https://cdn.simpleicons.org/espressif/E7352C' },
+  { name: 'Photoshop', sub: 'Image Editing', logo: 'https://cdn.simpleicons.org/adobephotoshop/31A8FF' },
 ]
 
 const projects = [
@@ -90,22 +98,17 @@ function App() {
             <a href="https://github.com/ibrhimdd" target="_blank" rel="noreferrer" aria-label="Website"><Globe /></a>
           </div>
         </div>
-        <div className="hero-art" aria-label="لوحة فنية رقمية تعبر عن التطوير والبرمجة">
+        <div className="hero-art" aria-label="صورة فوتوغرافية لمساحة عمل تقنية بإضاءة بنفسجية وزرقاء">
           <div className="hero-glow" />
-          <div className="code-window window-left"><span>‹ / ›</span></div>
-          <div className="code-window window-top"><i /><i /><i /><div>const create = () =&gt; {'{'}<br />&nbsp; innovate();<br />{'}'}</div></div>
-          <div className="laptop"><div className="laptop-screen"><span>01</span><i /><i /><i /><i /></div><div className="laptop-base" /></div>
           <img className="hero-person-image" src="/ibrahim-hoodie.webp" alt="إبراهيم مرتديًا هودي أسود" />
-          <div className="code-bubble">Code<br />Create<br />Innovate ✨</div>
           <div className="hero-orbit" />
-          <div className="hero-caption">DIGITAL CRAFT · CREATIVE CODE</div>
         </div>
       </section>
 
       <section id="skills" className="skills-section">
         <div className="section-title"><div><h2>مهاراتي التقنية <span>☰</span></h2><p>مجموعة متكاملة من المهارات لبناء حلول احترافية</p></div></div>
         <div className="skills-grid">
-          {skills.map(({ name, sub, Icon, color }) => <article className="skill-tile" key={name}><Icon size={35} color={color} strokeWidth={1.8} /><b>{name}</b><span>{sub}</span></article>)}
+          {skills.map(({ name, sub, logo }) => <article className="skill-tile" key={name}><img className="skill-logo" src={logo} alt={name + " logo"} loading="lazy" /><b>{name}</b><span>{sub}</span></article>)}
         </div>
       </section>
 
