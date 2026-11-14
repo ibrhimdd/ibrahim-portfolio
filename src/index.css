@@ -42,7 +42,7 @@ a{color:inherit;text-decoration:none}
 .hero-art{
   background-image:
     linear-gradient(90deg,rgba(4,7,22,.12),rgba(5,7,19,.34) 54%,rgba(5,7,19,.52)),
-    url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1800&q=85");
+    url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1800&q=85");
   background-size:cover;
   background-position:center;
   border-radius:0 0 0 34px;
