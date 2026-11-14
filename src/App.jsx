@@ -30,7 +30,7 @@ function App() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-      gsap.from('.site-header, .hero-copy, .hero-person', { y: 24, opacity: 0, duration: .85, stagger: .12, ease: 'power3.out' })
+      gsap.from('.site-header, .hero-copy, .hero-person-image', { y: 24, opacity: 0, duration: .85, stagger: .12, ease: 'power3.out' })
       gsap.utils.toArray('.reveal').forEach((el) => gsap.from(el, {
         y: 28, opacity: 0, duration: .75, ease: 'power3.out',
         scrollTrigger: { trigger: el, start: 'top 90%', once: true }
@@ -85,7 +85,7 @@ function App() {
           <div className="code-window window-left"><span>‹ / ›</span></div>
           <div className="code-window window-top"><i /><i /><i /><div>const create = () =&gt; {'{'}<br />&nbsp; innovate();<br />{'}'}</div></div>
           <div className="laptop"><div className="laptop-screen"><span>01</span><i /><i /><i /><i /></div><div className="laptop-base" /></div>
-          <div className="hero-person"><div className="person-head"><div className="hair" /><div className="glasses"><i /><i /></div><div className="beard" /><div className="smile" /></div><div className="person-neck" /><div className="person-body"><div className="hood" /><div className="arm arm-one" /><div className="arm arm-two" /></div></div>
+          <img className="hero-person-image" src="/ibrahim-hoodie.webp" alt="إبراهيم مرتديًا هودي أسود" />
           <div className="code-bubble">Code<br />Create<br />Innovate ✨</div>
           <div className="hero-orbit" />
           <div className="hero-caption">DIGITAL CRAFT · CREATIVE CODE</div>
