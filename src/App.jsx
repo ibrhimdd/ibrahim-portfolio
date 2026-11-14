@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger)
 const copy = {
   ar: {
     nav: ['الرئيسية', 'المهارات', 'المشاريع', 'عني'],
-    available: 'متاح لفرص جديدة',
+    available: 'أرحب بالتعاون والمشاريع الجديدة',
     eyebrow: 'مطور برمجيات ومصمم تجارب رقمية',
     heroA: 'أحوّل',
     heroB: 'الأفكار',
@@ -47,14 +47,14 @@ const copy = {
     contactLabel: 'عندك فكرة؟',
     contactTitle: 'خلينا نبني\nحاجة تستحق.',
     contactText: 'سواء عندك مشروع، فكرة، أو مجرد رغبة في تبادل الخبرات — يسعدني أسمع منك.',
-    email: 'راسلني',
+    email: 'تواصل عبر GitHub',
     footer: 'صُنع بشغف وكثير من القهوة.',
     top: 'للأعلى',
     skillNote: 'مجموعة أدوات أتعلم وأعمل بها باستمرار'
   },
   en: {
     nav: ['Home', 'Skills', 'Projects', 'About'],
-    available: 'Available for new opportunities',
+    available: 'Open to collaboration',
     eyebrow: 'Creative developer & digital maker',
     heroA: 'I turn',
     heroB: 'ideas',
@@ -89,7 +89,7 @@ const copy = {
     contactLabel: 'Have an idea?',
     contactTitle: 'Let’s build\nsomething meaningful.',
     contactText: 'A project, a wild idea, or just a conversation — I’d love to hear from you.',
-    email: 'Say hello',
+    email: 'Connect on GitHub',
     footer: 'Made with curiosity & too much coffee.',
     top: 'Back to top',
     skillNote: 'A toolkit I keep learning and building with'
@@ -257,7 +257,7 @@ function App() {
       <footer className="site-footer section-shell">
         <a className="wordmark" href="#home" onClick={(e) => { e.preventDefault(); goTo('home') }}><span className="wordmark-mark">I<span>.</span></span><span className="wordmark-name">IBRAHIM<span>ELKHOOLY</span></span></a>
         <p>© 2026 — {t.footer}</p>
-        <div className="social-links"><a href="https://github.com/ibrhimdd" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={18} /></a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={18} /></a><a href="https://github.com/ibrhimdd" aria-label="Email"><Mail size={18} /></a><button onClick={() => goTo('home')} aria-label={t.top}><ArrowUp size={18} /></button></div>
+        <div className="social-links"><a href="https://github.com/ibrhimdd" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={18} /></a><a href="https://github.com/ibrhimdd/edu-k" target="_blank" rel="noreferrer" aria-label="Edu-K repository"><Code2 size={18} /></a><a href="https://github.com/ibrhimdd/ibrahim-skills-developer" target="_blank" rel="noreferrer" aria-label="Prime Skills repository"><Layers3 size={18} /></a><button onClick={() => goTo('home')} aria-label={t.top}><ArrowUp size={18} /></button></div>
       </footer>
     </main>
   )
