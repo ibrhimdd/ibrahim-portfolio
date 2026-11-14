@@ -37,3 +37,44 @@ a{color:inherit;text-decoration:none}
 .skill-tile{min-height:104px}
 @media(max-width:1050px){.skills-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:700px){.hero-person-image{left:15%;width:70%;height:100%}.skills-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.skill-tile{min-height:92px}}
+
+/* Photographic hero background and recognizable technology brand marks */
+.hero-art{
+  background-image:
+    linear-gradient(90deg,rgba(4,7,22,.12),rgba(5,7,19,.34) 54%,rgba(5,7,19,.52)),
+    url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1800&q=85");
+  background-size:cover;
+  background-position:center;
+  border-radius:0 0 0 34px;
+  box-shadow:inset 0 0 90px rgba(5,7,19,.42);
+}
+.hero-art:before{
+  inset:0;
+  clip-path:none;
+  background:linear-gradient(135deg,rgba(39,24,104,.18),rgba(8,17,48,.18) 48%,rgba(70,30,145,.28));
+}
+.hero-glow{mix-blend-mode:screen;opacity:.22;filter:blur(115px)}
+.hero-person-image{
+  left:17%;
+  width:64%;
+  height:104%;
+  object-fit:contain;
+  object-position:center bottom;
+  filter:drop-shadow(0 18px 36px rgba(0,0,0,.7));
+}
+.skill-tile{padding:12px 8px;gap:6px}
+.skill-logo{width:38px;height:38px;object-fit:contain;display:block;flex:none}
+.skill-tile b{font-size:13px;line-height:1.35;text-align:center}
+.skill-tile span{font-size:11px;text-align:center}
+@media(max-width:700px){
+  .hero-art{
+    border-radius:0;
+    background-position:38% center;
+    min-height:350px;
+  }
+  .hero-person-image{left:12%;width:76%;height:100%}
+  .skill-logo{width:30px;height:30px}
+  .skill-tile{padding:9px 4px;min-height:96px}
+  .skill-tile b{font-size:10px}
+  .skill-tile span{font-size:9px}
+}
