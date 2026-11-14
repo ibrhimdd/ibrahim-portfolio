@@ -1,136 +1,45 @@
 import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import {
-  ArrowDown, ArrowUpLeft, ArrowUpRight, ArrowUp, ArrowDownLeft,
-  ArrowRight, ArrowLeft, Github, Linkedin, Mail, MoveUpRight,
-  Code2, Sparkles, Layers3, Globe2, Menu, X, Languages
-} from 'lucide-react'
+import { ArrowDownToLine, ArrowLeft, ArrowRight, ArrowUpRight, Github, Linkedin, Youtube, Moon, Sun, Send, Code2, Globe, CheckCircle2, Menu, X, Sparkles, Palette, Zap, Layers3, Database, Atom, Braces, Box, Wind } from 'lucide-react'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const copy = {
-  ar: {
-    nav: ['الرئيسية', 'المهارات', 'المشاريع', 'عني'],
-    available: 'أرحب بالتعاون والمشاريع الجديدة',
-    eyebrow: 'مطور برمجيات ومصمم تجارب رقمية',
-    heroA: 'أحوّل',
-    heroB: 'الأفكار',
-    heroC: 'إلى تجارب',
-    heroD: 'تُحسّ وتُعاش.',
-    intro: 'أنا إبراهيم الخولي — مطور برمجيات أعمل على بناء منصات تعليمية وتجارب ويب تفاعلية، وأربط بين البرمجة والتصميم والإلكترونيات.',
-    work: 'استكشف أعمالي',
-    contact: 'خلينا نتكلم',
-    scroll: 'انزل واكتشف',
-    index: '01 / 04',
-    statement: 'الكود هو البداية.\nالتجربة هي الحكاية.',
-    statementSub: 'أصمم وأبني واجهات لا تكتفي بأنها تعمل؛ بل تترك انطباعًا.',
-    skillsLabel: 'ما الذي أقدمه',
-    skillsTitle: 'أفكر في التجربة\nمن كل زاوية.',
-    skills: [
-      ['01', 'تطوير الواجهات', 'تطوير تطبيقات ويب ومنصات تعليمية باستخدام PHP وJavaScript وقواعد البيانات.', 'PHP · MySQL · JavaScript'],
-      ['02', 'الحركة والتفاعل', 'بناء واجهات React حديثة وربطها بتجارب استخدام سلسة ومتجاوبة.', 'React · Tailwind · GSAP'],
-      ['03', 'التصميم الإبداعي', 'دمج المتحكمات والحساسات مع واجهات الويب لمتابعة البيانات والتحكم.', 'ESP32 · IoT · APIs'],
-      ['04', 'الجودة والاختبار', 'تصميم واجهات واضحة وسهلة الاستخدام مع اهتمام بالتفاصيل وإمكانية الوصول.', 'UI/UX · Responsive Design']
-    ],
-    projectsLabel: 'مختارات من العمل',
-    projectsTitle: 'أفكار تحولت\nإلى واقع.',
-    projects: [
-      ['01', 'Edu-K', 'منصة تعليمية تفاعلية', 'PHP · Learning Platform · Dashboard', 'EK'],
-      ['02', 'Smart Classroom', 'نظام ذكي لمتابعة الفصول', 'ESP32 · IoT · PHP API', 'SC'],
-      ['03', 'Prime Skills', 'مكتبة المهارات والمراجع التقنية', 'Agent Skills · Developer Tools', 'PS']
-    ],
-    aboutLabel: 'وراء الشاشة',
-    aboutTitle: 'فضولي يقودني.\nوالتفاصيل تهمني.',
-    aboutText: 'أحب أفهم المشكلة قبل ما أكتب سطر كود. أتنقل بين البرمجة والتصميم والتجربة، وأؤمن إن أفضل الحلول هي الأبسط في الاستخدام والأقوى في أثرها.',
-    principles: ['التفكير قبل التنفيذ', 'التفاصيل تصنع الفرق', 'التعلم رحلة مستمرة'],
-    contactLabel: 'عندك فكرة؟',
-    contactTitle: 'خلينا نبني\nحاجة تستحق.',
-    contactText: 'سواء عندك مشروع، فكرة، أو مجرد رغبة في تبادل الخبرات — يسعدني أسمع منك.',
-    email: 'تواصل عبر GitHub',
-    footer: 'صُنع بشغف وكثير من القهوة.',
-    top: 'للأعلى',
-    skillNote: 'مجموعة أدوات أتعلم وأعمل بها باستمرار'
-  },
-  en: {
-    nav: ['Home', 'Skills', 'Projects', 'About'],
-    available: 'Open to collaboration',
-    eyebrow: 'Creative developer & digital maker',
-    heroA: 'I turn',
-    heroB: 'ideas',
-    heroC: 'into digital',
-    heroD: 'experiences.',
-    intro: 'I’m Ibrahim Elkhooly — a developer and creative thinker building digital products with thoughtful ideas, sharp details, and purposeful motion.',
-    work: 'Explore my work',
-    contact: 'Let’s talk',
-    scroll: 'Scroll to explore',
-    index: '01 / 04',
-    statement: 'Code is the beginning.\nExperience is the story.',
-    statementSub: 'I design and build interfaces that do more than work — they make you feel something.',
-    skillsLabel: 'What I bring',
-    skillsTitle: 'I think about experience\nfrom every angle.',
-    skills: [
-      ['01', 'Frontend development', 'Web applications and learning platforms built with PHP, JavaScript, and databases.', 'PHP · MySQL · JavaScript'],
-      ['02', 'Motion & interaction', 'Modern React interfaces with smooth, responsive user experiences.', 'React · Tailwind · GSAP'],
-      ['03', 'Creative design', 'Connecting microcontrollers and sensors to web interfaces for monitoring and control.', 'ESP32 · IoT · APIs'],
-      ['04', 'Quality & testing', 'Thoughtful, accessible interfaces with careful attention to usability and detail.', 'UI/UX · Responsive Design']
-    ],
-    projectsLabel: 'Selected explorations',
-    projectsTitle: 'Ideas made\nreal.',
-    projects: [
-      ['01', 'Edu-K', 'Interactive learning platform', 'PHP · Learning Platform · Dashboard', 'EK'],
-      ['02', 'Smart Classroom', 'Connected classroom monitoring', 'ESP32 · IoT · PHP API', 'SC'],
-      ['03', 'Prime Skills', 'A personal library of developer resources', 'Agent Skills · Developer Tools', 'PS']
-    ],
-    aboutLabel: 'Behind the screen',
-    aboutTitle: 'Curiosity drives me.\nDetails matter.',
-    aboutText: 'I like to understand the problem before writing a line of code. I move between engineering, design, and experience — believing the best solutions feel simple and leave a meaningful impact.',
-    principles: ['Think before building', 'Details make the difference', 'Always learning'],
-    contactLabel: 'Have an idea?',
-    contactTitle: 'Let’s build\nsomething meaningful.',
-    contactText: 'A project, a wild idea, or just a conversation — I’d love to hear from you.',
-    email: 'Connect on GitHub',
-    footer: 'Made with curiosity & too much coffee.',
-    top: 'Back to top',
-    skillNote: 'A toolkit I keep learning and building with'
-  }
-}
+const skills = [
+  { name: 'PHP', sub: 'MySQL', Icon: Database, color: '#8bb7ff' },
+  { name: 'React', sub: 'Next.js', Icon: Atom, color: '#55d9ff' },
+  { name: 'JavaScript', sub: 'TypeScript', Icon: Braces, color: '#f4d34e' },
+  { name: 'UI/UX', sub: 'Design', Icon: Palette, color: '#a78bfa' },
+  { name: 'GSAP', sub: 'Motion', Icon: Zap, color: '#b5f34b' },
+  { name: 'Three.js', sub: '3D', Icon: Box, color: '#d8d8ed' },
+  { name: 'Tailwind', sub: 'CSS', Icon: Wind, color: '#39c8e8' },
+  { name: 'More Skills', sub: '…', Icon: Layers3, color: '#6578ff' },
+]
 
-const icons = [Code2, Sparkles, Layers3, Globe2]
+const projects = [
+  { title: 'EduGenius LMS', type: 'منصة تعليمية', desc: 'منصة تعليمية متكاملة مع لوحة تحكم متقدمة', style: 'dashboard', href: 'https://github.com/ibrhimdd/edu-k' },
+  { title: 'Creative Portfolio', type: 'موقع إبداعي', desc: 'موقع شخصي تفاعلي بتصميم عمري', style: 'abstract', href: 'https://github.com/ibrhimdd/ibrahim-portfolio' },
+  { title: 'Dashboard Pro', type: 'لوحة تحكم', desc: 'لوحة تحكم احترافية مع تحليلات متقدمة', style: 'analytics', href: 'https://github.com/ibrhimdd/ibrahim-skills-developer' },
+]
 
 function App() {
-  const [lang, setLang] = useState('ar')
+  const [dark, setDark] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
   const root = useRef(null)
-  const t = copy[lang]
-  const rtl = lang === 'ar'
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      if (reduce) return
-      const intro = gsap.timeline({ defaults: { ease: 'power3.out' } })
-      intro.from('.nav-animate', { y: -18, opacity: 0, duration: .7 })
-        .from('.hero-kicker, .hero-copy', { y: 24, opacity: 0, duration: .8, stagger: .12 }, '-=.3')
-        .from('.hero-title-line', { yPercent: 110, rotate: 2, duration: 1, stagger: .12 }, '-=.55')
-        .from('.hero-art', { scale: .82, opacity: 0, rotate: -8, duration: 1.1 }, '-=.7')
-        .from('.hero-bottom', { y: 18, opacity: 0, duration: .7 }, '-=.5')
-
-      gsap.utils.toArray('.reveal').forEach((el) => {
-        gsap.from(el, {
-          y: 42, opacity: 0, duration: .85, ease: 'power3.out',
-          scrollTrigger: { trigger: el, start: 'top 88%', once: true }
-        })
-      })
-      gsap.to('.orbit-ring', {
-        rotate: 360, duration: 34, repeat: -1, ease: 'none'
-      })
-      gsap.to('.floating-star', {
-        y: -14, rotate: 18, duration: 2.4, yoyo: true, repeat: -1, ease: 'sine.inOut'
-      })
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+      gsap.from('.site-header, .hero-copy, .hero-person', { y: 24, opacity: 0, duration: .85, stagger: .12, ease: 'power3.out' })
+      gsap.utils.toArray('.reveal').forEach((el) => gsap.from(el, {
+        y: 28, opacity: 0, duration: .75, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 90%', once: true }
+      }))
+      gsap.to('.hero-orbit', { rotate: 360, duration: 28, repeat: -1, ease: 'none' })
+      gsap.to('.hero-glow', { scale: 1.12, opacity: .8, duration: 3, yoyo: true, repeat: -1, ease: 'sine.inOut' })
     }, root)
     return () => ctx.revert()
-  }, [lang])
+  }, [])
 
   const goTo = (id) => {
     setMenuOpen(false)
@@ -138,127 +47,87 @@ function App() {
   }
 
   return (
-    <main ref={root} dir={rtl ? 'rtl' : 'ltr'} className={rtl ? 'font-ar' : 'font-en'}>
-      <div className="noise" aria-hidden="true" />
-      <header className="site-header nav-animate">
-        <a className="wordmark" href="#home" onClick={(e) => { e.preventDefault(); goTo('home') }}>
-          <span className="wordmark-mark">I<span>.</span></span>
-          <span className="wordmark-name">IBRAHIM<span>ELKHOOLY</span></span>
+    <main ref={root} className={dark ? 'portfolio dark' : 'portfolio light'} dir="rtl">
+      <header className="site-header">
+        <a className="brand" href="#home" onClick={(e) => { e.preventDefault(); goTo('home') }}>
+          <span className="brand-mark">i<span>E</span></span>
+          <span className="brand-copy"><b>Ibrahim Elkholy</b><small>Full Stack Developer</small></span>
         </a>
-        <nav className={menuOpen ? 'main-nav is-open' : 'main-nav'}>
-          {t.nav.map((item, i) => <button key={item} onClick={() => goTo(['home', 'skills', 'projects', 'about'][i])}>{item}</button>)}
+        <nav className={menuOpen ? 'main-nav open' : 'main-nav'}>
+          {['الرئيسية', 'مهاراتي', 'مشاريعي', 'عني', 'تواصل معي'].map((label, i) => <button className={i === 0 ? 'active' : ''} key={label} onClick={() => goTo(['home', 'skills', 'projects', 'about', 'contact'][i])}>{label}</button>)}
         </nav>
         <div className="header-actions">
-          <button className="language-btn" onClick={() => setLang(lang === 'ar' ? 'en' : 'ar')} aria-label="Switch language">
-            <Languages size={16} /> {lang === 'ar' ? 'EN' : 'عربي'}
-          </button>
-          <a className="header-cta" href="https://github.com/ibrhimdd">{t.contact} <MoveUpRight size={15} /></a>
-          <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">{menuOpen ? <X /> : <Menu />}</button>
+          <button className="theme-toggle" onClick={() => setDark(!dark)} aria-label="تغيير المظهر">{dark ? <Moon size={18} /> : <Sun size={18} />}</button>
+          <a className="outline-pill" href="https://github.com/ibrhimdd" target="_blank" rel="noreferrer">استعرض ملفي <ArrowUpRight size={15} /></a>
+          <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="فتح القائمة">{menuOpen ? <X /> : <Menu />}</button>
         </div>
       </header>
 
-      <section id="home" className="hero section-shell">
-        <div className="hero-grid">
-          <div className="hero-content">
-            <div className="hero-kicker"><span className="status-dot" />{t.available}</div>
-            <p className="eyebrow hero-copy">{t.eyebrow} <span>✳</span></p>
-            <h1 className="hero-title">
-              <span className="hero-title-line">{t.heroA} <em>{t.heroB}</em></span>
-              <span className="hero-title-line">{t.heroC}</span>
-              <span className="hero-title-line accent-line">{t.heroD}</span>
-            </h1>
-            <p className="hero-description hero-copy">{t.intro}</p>
-            <div className="hero-buttons hero-copy">
-              <button className="button-primary" onClick={() => goTo('projects')}>{t.work} <span>{rtl ? <ArrowUpLeft size={18} /> : <ArrowUpRight size={18} />}</span></button>
-              <button className="button-quiet" onClick={() => goTo('contact')}>{t.contact} <ArrowDown size={16} /></button>
-            </div>
+      <section id="home" className="hero">
+        <div className="hero-copy">
+          <div className="welcome-pill"><span>👋</span> مرحباً بك في موقعي الشخصي</div>
+          <h1><span className="gradient-text">Ibrahim</span> Elkholy</h1>
+          <h2>Full Stack Developer &amp; UI/UX Designer</h2>
+          <p>أحوّل الأفكار إلى تجارب رقمية استثنائية،<br />مع شغف بالتطوير، التصميم، والابتكار.</p>
+          <div className="hero-actions">
+            <button className="primary-pill" onClick={() => goTo('projects')}><ArrowRight size={17} /> استعرض مشاريعي</button>
+            <button className="secondary-pill" onClick={() => goTo('contact')}><Send size={16} /> تواصل معي</button>
           </div>
-          <div className="hero-visual hero-art" aria-label="Abstract creative geometric artwork">
-            <div className="visual-topline"><span>CREATIVE / 2026</span><span>CAIRO, EG</span></div>
-            <div className="art-stage">
-              <div className="art-glow" />
-              <div className="orbit-ring orbit-one" />
-              <div className="orbit-ring orbit-two" />
-              <div className="orbit-ring orbit-three" />
-              <div className="art-core"><span>i</span><b>✳</b></div>
-              <div className="floating-star">✳</div>
-              <div className="art-label label-one">IDEAS<br />IN MOTION</div>
-              <div className="art-label label-two">MAKE IT<br /><strong>MATTER.</strong></div>
-              <div className="art-cross cross-one">＋</div>
-              <div className="art-cross cross-two">✳</div>
-            </div>
-            <div className="visual-bottomline"><span>FIG. 001 — THE CREATIVE MIND</span><span>◉ 01</span></div>
+          <div className="social-row">
+            <a href="https://github.com/ibrhimdd" target="_blank" rel="noreferrer" aria-label="GitHub"><Github /></a>
+            <a href="https://github.com/ibrhimdd" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin /></a>
+            <a href="https://github.com/ibrhimdd" target="_blank" rel="noreferrer" aria-label="YouTube"><Youtube /></a>
+            <a href="https://github.com/ibrhimdd" target="_blank" rel="noreferrer" aria-label="Website"><Globe /></a>
           </div>
         </div>
-        <div className="hero-bottom">
-          <span>{t.scroll}</span><span className="scroll-line" /><span>{t.index}</span>
+        <div className="hero-art" aria-label="لوحة فنية رقمية تعبر عن التطوير والبرمجة">
+          <div className="hero-glow" />
+          <div className="code-window window-left"><span>‹ / ›</span></div>
+          <div className="code-window window-top"><i /><i /><i /><div>const create = () =&gt; {'{'}<br />&nbsp; innovate();<br />{'}'}</div></div>
+          <div className="laptop"><div className="laptop-screen"><span>01</span><i /><i /><i /><i /></div><div className="laptop-base" /></div>
+          <div className="hero-person"><div className="person-head"><div className="hair" /><div className="glasses"><i /><i /></div><div className="beard" /><div className="smile" /></div><div className="person-neck" /><div className="person-body"><div className="hood" /><div className="arm arm-one" /><div className="arm arm-two" /></div></div>
+          <div className="code-bubble">Code<br />Create<br />Innovate ✨</div>
+          <div className="hero-orbit" />
+          <div className="hero-caption">DIGITAL CRAFT · CREATIVE CODE</div>
         </div>
       </section>
 
-      <section className="statement-section section-shell">
-        <div className="statement-mark reveal">“</div>
-        <div className="statement-content reveal">
-          <h2>{t.statement.split('\n').map((line, i) => <span key={i}>{line}</span>)}</h2>
-          <p>{t.statementSub}</p>
-        </div>
-        <div className="statement-side reveal"><span>THOUGHT / 001</span><span className="side-asterisk">✳</span></div>
-      </section>
-
-      <section id="skills" className="skills-section section-shell section-space">
-        <div className="section-heading reveal">
-          <div><p className="section-label"><span>01</span> / {t.skillsLabel}</p><h2>{t.skillsTitle.split('\n').map((line, i) => <span key={i}>{line}</span>)}</h2></div>
-          <p className="heading-aside">{t.skillNote}</p>
-        </div>
+      <section id="skills" className="skills-section">
+        <div className="section-title"><div><h2>مهاراتي التقنية <span>☰</span></h2><p>مجموعة متكاملة من المهارات لبناء حلول احترافية</p></div></div>
         <div className="skills-grid">
-          {t.skills.map((skill, i) => {
-            const Icon = icons[i]
-            return <article className="skill-card reveal" key={skill[0]}>
-              <div className="skill-card-top"><span>{skill[0]} — 0{i + 1}</span><Icon size={22} strokeWidth={1.4} /></div>
-              <h3>{skill[1]}</h3><p>{skill[2]}</p>
-              <div className="skill-tags">{skill[3].split(' · ').map(tag => <span key={tag}>{tag}</span>)}</div>
-              <div className="card-arrow">{rtl ? <ArrowUpLeft size={18} /> : <ArrowUpRight size={18} />}</div>
-            </article>
-          })}
+          {skills.map(({ name, sub, Icon, color }) => <article className="skill-tile" key={name}><Icon size={35} color={color} strokeWidth={1.8} /><b>{name}</b><span>{sub}</span></article>)}
         </div>
       </section>
 
-      <section id="projects" className="projects-section section-shell section-space">
-        <div className="section-heading reveal">
-          <div><p className="section-label"><span>02</span> / {t.projectsLabel}</p><h2>{t.projectsTitle.split('\n').map((line, i) => <span key={i}>{line}</span>)}</h2></div>
-          <span className="project-count">SELECTED WORKS<br />2024 — 2026</span>
+      <section className="work-about">
+        <div id="projects" className="projects-section">
+          <div className="projects-heading"><div><h2>أبرز مشاريعي</h2><p>نماذج من أعمالي التي أفتخر بها</p></div><button onClick={() => goTo('contact')}>عرض جميع المشاريع <ArrowLeft size={15} /></button></div>
+          <div className="project-grid">
+            {projects.map((project) => <a className="project-card" href={project.href} target="_blank" rel="noreferrer" key={project.title}>
+              <div className={'project-thumb ' + project.style}>
+                <span className="project-tag">{project.type}</span>
+                {project.style === 'abstract' ? <div className="abstract-shape" /> : <div className="mock-dashboard"><div className="mock-sidebar"><i /><i /><i /><i /></div><div className="mock-content"><div className="mock-top" /><div className="mock-stats"><i /><i /><i /></div><div className="mock-chart"><b /><b /><b /><b /><b /><b /></div><div className="mock-bottom" /></div></div>}
+              </div>
+              <div className="project-details"><h3>{project.title}</h3><p>{project.desc}</p><span>عرض المشروع <ArrowLeft size={15} /></span></div>
+            </a>)}
+          </div>
         </div>
-        <div className="projects-list">
-          {t.projects.map((project, i) => <a className={'project-row reveal project-' + i} key={project[0]} href={i === 0 ? "https://github.com/ibrhimdd/edu-k" : i === 2 ? "https://github.com/ibrhimdd/ibrahim-skills-developer" : "https://github.com/ibrhimdd"} target="_blank" rel="noreferrer" aria-label={`Open ${project[1]} on GitHub`}>
-            <div className="project-visual"><span className="project-monogram">{project[4]}</span><span className="project-orbit">✳</span><span className="project-number">{project[0]}</span></div>
-            <div className="project-info"><span className="project-type">{project[3]}</span><h3>{project[1]}</h3><p>{project[2]}</p></div>
-            <div className="project-link"><MoveUpRight size={22} /></div>
-          </a>)}
-        </div>
-        <p className="projects-footnote">* {rtl ? 'نماذج ومشاريع مختارة — سيتم إضافة روابط العرض والتفاصيل لاحقًا.' : 'Selected concepts and projects — live links and case studies coming soon.'}</p>
+        <aside id="about" className="about-card">
+          <h2>نبذة <span>عني</span></h2>
+          <p>مطور ويب ومصمم واجهات متخصص في بناء المنصات التعليمية والتطبيقات الحديثة. أؤمن بأن التقنية هي جسر نحو مستقبل أفضل.</p>
+          <ul><li><CheckCircle2 /> خبرة في تطوير الويب</li><li><CheckCircle2 /> شغف بالتصميم والموشن</li><li><CheckCircle2 /> التزام بالجودة والاحترافية</li></ul>
+          <div className="about-visual"><div className="about-code"><Code2 size={66} /></div><span>BUILD THE FUTURE</span></div>
+          <button className="about-more" onClick={() => goTo('contact')}>المزيد عني <ArrowLeft size={16} /></button>
+        </aside>
       </section>
 
-      <section id="about" className="about-section section-shell section-space">
-        <div className="about-stamp reveal"><span>IBRAHIM</span><b>✳</b><span>ELKHOOLY</span><small>CREATIVE DEVELOPER</small></div>
-        <div className="about-copy reveal">
-          <p className="section-label"><span>03</span> / {t.aboutLabel}</p>
-          <h2>{t.aboutTitle.split('\n').map((line, i) => <span key={i}>{line}</span>)}</h2>
-          <p className="about-description">{t.aboutText}</p>
-          <ul>{t.principles.map((p, i) => <li key={p}><span>0{i + 1}</span>{p}</li>)}</ul>
-        </div>
+      <section id="contact" className="contact-banner">
+        <div className="mountain-art"><span>◆</span><i /></div>
+        <div className="contact-message"><h2>لنبدأ مشروعك القادم معاً! 🚀</h2><p>أفكارك + خبراتي = نتيجة استثنائية</p></div>
+        <a className="primary-pill" href="https://github.com/ibrhimdd" target="_blank" rel="noreferrer"><ArrowRight size={17} /> تواصل معي الآن</a>
+        <div className="planet planet-one" /><div className="planet planet-two" />
       </section>
-
-      <section id="contact" className="contact-section section-shell">
-        <div className="contact-top reveal"><p className="section-label"><span>04</span> / {t.contactLabel}</p><span>LET’S MAKE<br />SOMETHING GOOD.</span></div>
-        <h2 className="contact-title reveal">{t.contactTitle.split('\n').map((line, i) => <span key={i}>{line}</span>)}</h2>
-        <div className="contact-bottom reveal"><p>{t.contactText}</p><a className="contact-email" href="https://github.com/ibrhimdd">{t.email} <span><MoveUpRight /></span></a></div>
-        <div className="contact-decoration">✳</div>
-      </section>
-
-      <footer className="site-footer section-shell">
-        <a className="wordmark" href="#home" onClick={(e) => { e.preventDefault(); goTo('home') }}><span className="wordmark-mark">I<span>.</span></span><span className="wordmark-name">IBRAHIM<span>ELKHOOLY</span></span></a>
-        <p>© 2026 — {t.footer}</p>
-        <div className="social-links"><a href="https://github.com/ibrhimdd" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={18} /></a><a href="https://github.com/ibrhimdd/edu-k" target="_blank" rel="noreferrer" aria-label="Edu-K repository"><Code2 size={18} /></a><a href="https://github.com/ibrhimdd/ibrahim-skills-developer" target="_blank" rel="noreferrer" aria-label="Prime Skills repository"><Layers3 size={18} /></a><button onClick={() => goTo('home')} aria-label={t.top}><ArrowUp size={18} /></button></div>
-      </footer>
+      <footer className="footer"><span>© 2026 Ibrahim Elkholy</span><span>صُنع بشغف وإبداع</span><a href="https://github.com/ibrhimdd" target="_blank" rel="noreferrer"><Github size={17} /> GitHub</a></footer>
     </main>
   )
 }
